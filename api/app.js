@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var mongodb = require('mongodb');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -10,7 +11,23 @@ var usersRouter = require('./routes/users');
 var testAPIRouter = require("./routes/testAPI");
 
 var app = express();
+let MongoClient = mongodb.MongoClient;
 
+app.use('/paletassombrasdeojos', paletassombrasdeojos);//llamamos al objeto paletassombrasdeojos a través de su ruta para su uso
+app.use('/ventas', ventas);
+
+app.use(express.static('public'));
+
+MongoClient.connect('mongodb://127.0.0.1:27017', function(err, client) {
+    if(err !== null) {
+        console.log(err);
+    } else {
+    app.locals.db = client.db('tiendamaquillaje')//conecto con nuestra base de datos       
+}
+});
+
+app.listen(3000);//ponemos el servidor a escucha en un puerto
+//AQUI INSTALAMOS EL MONGO Y HACEMOS LA CONEXION CON LA BASE DE DATOS----------------------------------------------
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
