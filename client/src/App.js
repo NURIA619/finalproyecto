@@ -7,23 +7,16 @@ import Footer from './Footer'
 
 function App() {
   
-
-// let [apiResponse, setApiResponse] = useState("");
-
-
-// let [prueba, setPrueba] = useState("");
-
-// function callAPI(){
-//   fetch('http://localhost:9000/users')
-//   .then(res => res.text())
-//   .then(res => setApiResponse(res))
-// }
-
-// useEffect(()=>{
-//   callAPI();
-// },[])
-
   return (
+  <>
+    <Header />
+
+    <Main />
+
+    <Footer />
+
+    </>
+
     //aqui meto los componentes y las rutas
   );
 }
