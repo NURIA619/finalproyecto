@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// /* GET home page. */
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 router.use(express.urlencoded({extended: false}));
 router.use(express.json());
@@ -12,7 +12,8 @@ router.use(express.json());
 router.get("/", function(req, res){
     dbConnection = req.app.locals.db;
     dbConnection.collection('paletas').find().toArray(function(err,datos){
-        res.send(datos)
+        console.log(datos);
+        res.send(datos);
     })
 
 })

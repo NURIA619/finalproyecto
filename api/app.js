@@ -9,16 +9,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require ('cors');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var testAPIRouter = require("./routes/testAPI");
+// var indexRouter = require('./routes/index');
+// var usersRouter = require('./routes/users');
+// var testAPIRouter = require("./routes/testAPI");
+var paletas = require('./routes/paletas');
 
 var app = express();
 let MongoClient = mongodb.MongoClient;
 let db;
 
-app.use('/paletassombrasdeojos', paletassombrasdeojos);//llamamos al objeto paletassombrasdeojos a través de su ruta para su uso
-app.use('/ventas', ventas);
+app.use('/paletas', paletas);//llamamos al objeto paletassombrasdeojos a través de su ruta para su uso
+// app.use('/ventas', ventas);
+
 
 
 
@@ -31,59 +33,59 @@ MongoClient.connect('mongodb://127.0.0.1:27017', function(err, client) {
 }
 });
 
-const app = express();
+// const app = express();
 
-app.get("/login/:name/:password", function (req, res){
-    let name= req.params.name;
-    let password= req.params.password;
+// app.get("/login/:name/:password", function (req, res){
+//     let name= req.params.name;
+//     let password= req.params.password;
 
-    let contraseniaCifrada = bcrypt.hashSync(password, 10);
-    console.log("contraseña cifrada:" + contraseniaCifrada);
+//     let contraseniaCifrada = bcrypt.hashSync(password, 10);
+//     console.log("contraseña cifrada:" + contraseniaCifrada);
 
-    let coincidencia = bcrypt.compareSync( passsword, contraseniaCifrada );
-    console.log(coincidencia);
-    if(coincidencia){
-        db.collection("usuarios").insertOne({username: name, password:
-        contraseniaCifrada}, function (err, userUpdate) {
-            // console.log(userUpdate);
-            if (err !== null) {
-                res.send("Ha habido un error");
-            } else {
-                if (userUpdate.result.n > 0) {
-                    res.send("Usuario creado");
-                } else {
-                    res.send("El usuario no se ha podido crear" );
-                }
-            }
-        })
-    }
+//     let coincidencia = bcrypt.compareSync( passsword, contraseniaCifrada );
+//     console.log(coincidencia);
+//     if(coincidencia){
+//         db.collection("usuarios").insertOne({username: name, password:
+//         contraseniaCifrada}, function (err, userUpdate) {
+//             // console.log(userUpdate);
+//             if (err !== null) {
+//                 res.send("Ha habido un error");
+//             } else {
+//                 if (userUpdate.result.n > 0) {
+//                     res.send("Usuario creado");
+//                 } else {
+//                     res.send("El usuario no se ha podido crear" );
+//                 }
+//             }
+//         })
+//     }
 
-})
+// })
 
-app.get("/checkuser/:username/:password", function (req, res) {
-    let username = req.params.username;
-    let password = req.params.password;
+// app.get("/checkuser/:username/:password", function (req, res) {
+//     let username = req.params.username;
+//     let password = req.params.password;
 
-    db.collection("usuarios")
-        .find({ username: username })
-        .toArray(function (err, arrayUsuario) {
-            // console.log(arrayUsuario);
-            if (err !== null) {
-                res.send("Ha habido un error");
-            } else {
-                if (arrayUsuario.length > 0) {
-                    if (bcrypt.compareSync(password, arrayUsuario[0].password)
-                    ) {
-                        res.send("Logueado correctamente");
-                    } else {
-                        res.send("Contraseña incorrecta");
-                    }
-                } else {
-                    res.send("El usuario no existe");
-                }
-            }
-        });
-});
+//     db.collection("usuarios")
+//         .find({ username: username })
+//         .toArray(function (err, arrayUsuario) {
+//             // console.log(arrayUsuario);
+//             if (err !== null) {
+//                 res.send("Ha habido un error");
+//             } else {
+//                 if (arrayUsuario.length > 0) {
+//                     if (bcrypt.compareSync(password, arrayUsuario[0].password)
+//                     ) {
+//                         res.send("Logueado correctamente");
+//                     } else {
+//                         res.send("Contraseña incorrecta");
+//                     }
+//                 } else {
+//                     res.send("El usuario no existe");
+//                 }
+//             }
+//         });
+// });
 
 
 
@@ -104,8 +106,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -4,44 +4,30 @@ import './Styles.css';
 
 
 function Main() {
-
+    let [listaPaletas, setListaPaletas] = useState("");
     //aqui hago los fetch para paletas
 
     //fetch PUT para mostrar las paletas
-    fetch("/paletas")
-        .then(response => response.json())
-        .then(datos => {
-            
-            
+    useEffect(function () { //siempre usar useEffect para hacer un fetch
+        fetch("http://localhost:9000/paletas")
+            .then(response => response.json())
+            .then(paletas => {
+                setListaPaletas(paletas.map(function (paleta) {
+                    console.log(paleta);
+                    return (
+                        <>
+                            <h1>{paleta.paleta}</h1>
+                            <img src={paleta.imagen} />
+                            <h3>{paleta.colores}</h3>
+                            <p>{paleta.precio}</p>
+                        </>
+                    )
+                }))
 
 
-        })
-
-
-
-
-
-
-
-
-
-    return (
-        <>
-
-            <nav>
-
-                <ul>
-                    <li><a href="./index.html" class="active">Nuestras Paletas</a></li>
-                </ul>
-            </nav>
-
-        </>
-
-
-
-    )
-
-
+            });
+    }, []);
+    return <div>{listaPaletas}</div>;
 }
 
 

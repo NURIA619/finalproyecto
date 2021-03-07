@@ -5,10 +5,6 @@ import './Styles.css';
 function Header() {
 // llamada a la api fetch para username y password
     return (
-        
-
-
-
             <nav>
                 <ul>
                     <li><h1>Sombra Aquí y Sobra Allá</h1></li>
