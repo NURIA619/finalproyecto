@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 
 function Nosotros() {
-    // llamada a la api fetch para username y password
+   
         return (
             <div className = "Nosotros">
             <h2>Sobre nosotros</h2>

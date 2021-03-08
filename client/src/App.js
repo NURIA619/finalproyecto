@@ -5,7 +5,7 @@ import Header from './Header'
 import Aside from './Aside'
 import Main from './Main'
 // import Paleta from '/Paleta'
-import Nosotros from '/Nosotros'
+import Nosotros from './Nosotros'
 import Footer from './Footer'
 
 function App() {

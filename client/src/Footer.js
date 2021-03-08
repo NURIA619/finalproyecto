@@ -8,7 +8,7 @@ function Footer(){
     return(
 <footer className= "Footer">
 
-<div className="Rrss">
+<div classRrss ="Rrss">
        
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://es-es.facebook.com/"target="_blank"><i class="fab fa-facebook"></i></a>
@@ -16,7 +16,7 @@ function Footer(){
 </div>
     
           <p>© 2018 Qode Interactive, All Rights Reserved</p>
-          <a><i class="fas fa-envelope-open-text"></i></a>
+          <i class="fas fa-envelope-open-text"></i>
 
 </footer>
 
