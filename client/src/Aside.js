@@ -19,7 +19,7 @@ function Aside() {
                             <img src={paleta.imagen} />
                             {/* <h3>{paleta.colores}</h3> */}
                             {/* <p>{paleta.precio}</p> */}
-                            <button>Ver</button>
+                            <button><Link to="/Paleta">Ver</Link></button>
                         </div>
                     )
                 }))

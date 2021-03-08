@@ -25,8 +25,6 @@ app.use('/paletas', paletas);//llamamos al objeto paletassombrasdeojos a través
 // app.use('/ventas', ventas);
 
 
-
-
 MongoClient.connect('mongodb://127.0.0.1:27017', function(err, client) {
     if(err !== null) {
         console.log(err);

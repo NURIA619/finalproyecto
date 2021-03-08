@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 
 function Paleta() {
-    let [listaPaletas, setListaPaletas] = useState("");
+    let [paleta, setPaleta] = useState("");
     //aqui hago los fetch para paletas
 
     //fetch PUT para mostrar las paletas
@@ -11,7 +11,7 @@ function Paleta() {
         fetch("http://localhost:9000/paletas")
             .then(response => response.json())
             .then(paletas => {
-                setListaPaletas(paletas.map(function (paleta) {
+                setpaleta(paletas.map(function (paleta) {
                     console.log(paleta);
                     return (
                         <div className= "Aside">
@@ -27,19 +27,8 @@ function Paleta() {
 
             });
     }, []);
-    return <div>{listaPaletas}</div>;
+    return <div>{paleta}</div>;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

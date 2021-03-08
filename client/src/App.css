@@ -114,8 +114,8 @@ aside img{
 .Main{
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  /* text-align: center; */
+  align-items: center;
+  text-align: center;
   margin: 1rem auto;
 }
 

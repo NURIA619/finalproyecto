@@ -6,7 +6,8 @@ function Main() {
 // llamada a la api fetch para username y password
     return (
         <div className= "Main"> 
-            <h1>Esto es el main</h1>
+            <h1></h1>
+            <img src = '..\img\images.jpg'/>
         </div> 
 
 
