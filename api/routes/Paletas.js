@@ -18,6 +18,11 @@ router.get("/", function(req, res){
 
 })
 
+router.post("/post", function(req, res){
+    dbConnection = req.app.locals.db,
+    res.send("")
+})
+
 
 
 router.put("/put", function(req, res){

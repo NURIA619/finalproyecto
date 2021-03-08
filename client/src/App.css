@@ -1,4 +1,18 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+  color: #614e90;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+li {
+  list-style: none;
+}
+
+
+.App, aside {
   text-align: center;
 }
 
@@ -14,18 +28,112 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color:#ffe9d6;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: white;
+  
+}
+
+.App-header nav{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.App-header ul{
+  display: flex;
+  align-items: center; 
+  
+}
+
+.App-header li{
+  padding: 1rem 2rem;
+  margin: 1rem;
+  
+ 
+}
+.App-header .SinIconos li{
+  background-color: #ff8a73;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+}
+.App-header .Iconos li:not(:last-child){
+  background-color:#ff8a73;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+}
+
+.App-header h1{
+   text-align: center;
+   color: #614e90;
+   padding-top: 1.5rem;
+   
+}
+
+.App-header .Carrito{
+  font-size: 3rem;
+  color: #614e90
+}
+
+.App-link {
+  color: white;
+}
+
+.Container{
+  display: flex;
+}
+
+aside{
+  width: 40%;
+  
+}
+
+aside img{
+  max-width: 80%;
+}
+
+.Aside{
+  background-color:#ecd7dc; 
+  padding: 1rem 0;
+}
+
+.Aside button{
+  color: white;
+  background-color:  #614e90;
+  border-radius: .8rem;
+  font-size: 1.2rem;
+  border: none;
+  padding: 1rem 2rem;
+  margin: 1rem;
+}
+
+.Main{
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* text-align: center; */
+  margin: 1rem auto;
+}
+
+.Footer{
+  background-color: #ff8a73;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(8px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.Footer a{
+  padding: 1rem;
+  margin: 1rem;
+  color: #614e90;
 }
 
 @keyframes App-logo-spin {

@@ -9,12 +9,15 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require ('cors');
 
+
+
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 // var testAPIRouter = require("./routes/testAPI");
 var paletas = require('./routes/paletas');
 
 var app = express();
+app.use(cors())
 let MongoClient = mongodb.MongoClient;
 let db;
 
@@ -98,7 +101,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017', function(err, client) {
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(cors())
+
 
 app.use(logger('dev'));
 app.use(express.json());
