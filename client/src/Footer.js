@@ -16,7 +16,7 @@ function Footer(){
 </div>
     
           <p>© 2018 Qode Interactive, All Rights Reserved</p>
-          <i class="fas fa-envelope-open-text"></i>
+          <a href="https://outlook.live.com/owa/"target="_blank"><i class="fas fa-envelope-open-text"></i></a>
 
 </footer>
 

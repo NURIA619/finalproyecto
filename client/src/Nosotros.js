@@ -1,7 +1,3 @@
-import { BrowserRouter, Route, Link, Router } from 'react-router-dom'
-import { useState, useEffect } from 'react';
-
-
 
 function Nosotros() {
    
@@ -22,30 +18,11 @@ function Nosotros() {
             </div>
     
     
-    
-    
-        
-    
-    
-    
+
         )
     
     
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     export default Nosotros;

@@ -1,48 +1,32 @@
-import { BrowserRouter, Route, Link, Router } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import { Route, Link } from 'react-router-dom'
+
+import Paleta from './Paleta';
 
 
-function Aside() {
-    let [listaPaletas, setListaPaletas] = useState("");
-    //aqui hago los fetch para paletas
+function Aside(props) {
+    
+let id;
 
-    //fetch PUT para mostrar las paletas
-    useEffect(function () { //siempre usar useEffect para hacer un fetch
-        fetch("http://localhost:9000/paletas")
-            .then(response => response.json())
-            .then(paletas => {
-                setListaPaletas(paletas.map(function (paleta) {
-                    console.log(paleta);
-                    return (
-                        <div className= "Aside">
-                            <h1>{paleta.paleta}</h1>
-                            <img src={paleta.imagen} />
-                            {/* <h3>{paleta.colores}</h3> */}
-                            {/* <p>{paleta.precio}</p> */}
-                            <button><Link to="/Paleta">Ver</Link></button>
-                        </div>
-                    )
-                }))
+    return (
+        <div className="Aside">
+            <h1>{props.paleta}</h1>
+            <img src={props.img} />
+            <button><Link to={`./Paleta/${props.id}`}>Ver</Link></button>
 
+            
 
-            });
-    }, []);
-    return <div>{listaPaletas}</div>;
+                {/* <Paleta                
+                    // let id={props.id}
+                    paleta={props.paleta}
+                    img={props.imagen}
+                    colores={props.colores}
+                    precio={props.precio}
+                /> */}
+        </div>
+    )
+
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

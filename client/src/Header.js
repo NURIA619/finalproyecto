@@ -1,5 +1,4 @@
-import { BrowserRouter, Route, Link, Router } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import {Link } from 'react-router-dom'
 
 
 function Header() {
@@ -9,14 +8,14 @@ function Header() {
 
               <nav >
                 <ul className = "App-link SinIconos">
-                    <Link to="/Main"><li>Pagina Principal</li></Link>
-                    <Link to="/Nosotros"><li>Sobre Nosotros</li></Link>              
+                    <li><Link to="/">Pagina Principal</Link></li>
+                    <li><Link to="/Nosotros">Sobre Nosotros</Link></li>              
                 </ul>
 
                 <ul className = "App-link Iconos">
-                    <Link to="Main"><li>Registrate</li></Link>
-                    <li>Entrar</li>
-                    <li className= "Carrito"><i class="ventas fas fa-cart-arrow-down"></i></li>
+                    <li><Link to="./Registrate">Registrate</Link></li>
+                    <li><Link to="./Entrar">Entrar</Link></li>
+                    <li className= "Carrito"><Link to="./Carrito"><i class="ventas fas fa-cart-arrow-down"></i></Link></li>
                 </ul>
                 
 

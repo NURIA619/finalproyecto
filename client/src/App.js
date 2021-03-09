@@ -1,42 +1,76 @@
 import './App.css';
 import { BrowserRouter, Route, Link, Router } from 'react-router-dom'
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import Header from './Header'
 import Aside from './Aside'
+import Paleta from './Paleta'
 import Main from './Main'
-// import Paleta from '/Paleta'
-import Nosotros from './Nosotros'
 import Footer from './Footer'
 
+
 function App() {
-  
+
+ let [listaPaletas, setListaPaletas] = useState("");
+//  let [paleta, setPaleta] = useState("");
+  // let [id, setId] = useState("");
+  //aqui hago los fetch para paletas
+
+  //fetch PUT para mostrar las paletas
+  useEffect(function () { //siempre usar useEffect para hacer un fetch
+    fetch("http://localhost:9000/paletas")
+      .then(response => response.json())
+      .then(paletas => {
+        setListaPaletas(paletas.map(function (paleta) {
+         
+
+          return (
+            <>
+              <Aside
+              id = {paleta._id}
+              paleta = {paleta.paleta}
+              img={paleta.imagen}
+              colores={paleta.colores}
+              precio={paleta.precio}
+              />
+
+              {/* <Paleta
+              id = {paleta._id}
+              paleta = {paleta.paleta}
+              img={paleta.imagen}
+              colores={paleta.colores}
+              precio={paleta.precio}
+              />  */}
+
+              
+            </>
+          )
+        }))
+
+
+      });
+  }, []);
+
+
   return (
-  <>
-   <BrowserRouter>
-  
-  <Header />
-  
-    <Route exact path = "/Main">
-    <Main />
-    </Route>
+    <>
+      <BrowserRouter>
 
-    <Route exact path = "/Nosotros">
-    <Nosotros />
-    </Route>
+        <Header />
 
-  <div className = "Container">
-  <Route>
-  <aside>
-  <Aside />
-  </aside>
-  </Route>
-  {/* <Paleta /> */}
-   
-    <Main />
-</div>
+        <div className="Container">
 
-    <Footer />
-    </BrowserRouter>
+          <aside>
+
+            {listaPaletas}
+
+          </aside>
+
+          <Main />
+
+        </div>
+
+        <Footer />
+      </BrowserRouter>
     </>
 
     //aqui meto los componentes y las rutas
