@@ -11,7 +11,7 @@ import Footer from './Footer'
 function App() {
 
  let [listaPaletas, setListaPaletas] = useState("");
-//  let [paleta, setPaleta] = useState("");
+ let [paleta, setPaleta] = useState("");
   // let [id, setId] = useState("");
   //aqui hago los fetch para paletas
 
@@ -50,7 +50,7 @@ function App() {
       });
   }, []);
 
-
+ 
   return (
     <>
       <BrowserRouter>
@@ -65,7 +65,7 @@ function App() {
 
           </aside>
 
-          <Main />
+
 
         </div>
 

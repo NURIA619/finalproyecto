@@ -32,9 +32,9 @@ function Main() {
                 <Carrito />
             </Route>
 
-            <Route exact path="/Paleta/:id">
+            {/* <Route exact path="/Paleta/:id">
                 <Paleta />
-            </Route>
+            </Route> */}
 
         </div>
 
