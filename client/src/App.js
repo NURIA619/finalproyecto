@@ -25,6 +25,13 @@ function App() {
 
           return (
             <>
+              {/* <Aside
+              id = {paleta._id}
+              paleta = {paleta.paleta}
+              img={paleta.imagen}
+              
+              /> */}
+              
               <Aside
               id = {paleta._id}
               paleta = {paleta.paleta}
@@ -32,15 +39,8 @@ function App() {
               colores={paleta.colores}
               precio={paleta.precio}
               />
-
-              {/* <Paleta
-              id = {paleta._id}
-              paleta = {paleta.paleta}
-              img={paleta.imagen}
-              colores={paleta.colores}
-              precio={paleta.precio}
-              />  */}
-
+       
+              
               
             </>
           )
@@ -57,19 +57,34 @@ function App() {
 
         <Header />
 
+        
+        
         <div className="Container">
-
+        
           <aside>
-
+          
             {listaPaletas}
+                        
 
           </aside>
 
+            <Route exact path="/Paleta/:id">
+            <Paleta           
+          
+                    let id={paleta._id}
+                    paleta={paleta.paleta}
+                    img={paleta.imagen}
+                    colores={paleta.colores}
+                    precio={paleta.precio}
+                />
+            </Route> 
 
-
+          <Main />
+          
         </div>
 
-        <Footer />
+        <Footer paletas = {listaPaletas}/>
+        
       </BrowserRouter>
     </>
 

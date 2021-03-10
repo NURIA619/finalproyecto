@@ -8,8 +8,8 @@ function Header() {
 
               <nav >
                 <ul className = "App-link SinIconos">
-                    <li><Link to="/">Pagina Principal</Link></li>
-                    <li><Link to="/Nosotros">Sobre Nosotros</Link></li>              
+                    <li><Link to="./">Pagina Principal</Link></li>
+                    <li><Link to="./Nosotros">Sobre Nosotros</Link></li>              
                 </ul>
 
                 <ul className = "App-link Iconos">

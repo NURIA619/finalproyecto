@@ -1,20 +1,24 @@
 import './App.css';
 
 function Entrar() {
-  
 
-  return(
+
+  return (
     <>
-    <div className = "Login">
+      <div className="Login">
 
-    <h2>Entrar</h2>
-    
-  
+        <p><label for="usuario">Usuario</label>
+          <input type="text" name="usuario" id="usuario" />
+        </p>
+        <p><label for="contrasenia">Contraseña</label>
+          <input type="text" name="contrasenia" id="contrasenia" />
+        </p>
+        <button>Entrar</button>
 
 
-    </div>
+      </div>
 
-    
+
     </>
   )
 }

@@ -7,8 +7,8 @@ import Registrate from './Registrate'
 import Entrar from './Entrar'
 import Carrito from './Carrito'
 
-function Main() {
-
+function Main(props) {
+   
     return (
         <div className="Main">
 
@@ -32,10 +32,9 @@ function Main() {
                 <Carrito />
             </Route>
 
-            {/* <Route exact path="/Paleta/:id">
-                <Paleta />
-            </Route> */}
-
+            
+            
+ 
         </div>
 
     

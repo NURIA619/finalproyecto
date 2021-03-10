@@ -7,11 +7,11 @@ import Main from './Main';
 
 function Aside(props) {
     let [paleta, setPaleta] = useState("");
-    function datosPaleta(){
-        setPaleta(
-            props.paleta
-            )
-    }
+    // function datosPaleta(){
+    //     setPaleta(
+    //         props.paleta
+    //         )
+    // }
 
    
 let id;
@@ -20,25 +20,13 @@ let id;
         <div className="Aside">
             <h1>{props.paleta}</h1>
             <img src={props.img} />
-            <button onClick = {datosPaleta}><Link to={`./Paleta/${props.id}`}>Ver</Link></button>
+            <button><Link to={`./Paleta/${props.id}`}>Ver</Link></button>
            
-            <Route exact path="/Paleta/:id">
-             <Paleta    
-                    // let id={props.id}
-                    paleta={props.paleta}
-                    img={props.imagen}
-                    colores={props.colores}
-                    precio={props.precio}
-                />
-            </Route>
+           
+             
+           
 
-                {/* <Paleta         
-                    // let id={props.id}
-                    paleta={props.paleta}
-                    img={props.imagen}
-                    colores={props.colores}
-                    precio={props.precio}
-                /> */}
+               
         </div>
     )
 

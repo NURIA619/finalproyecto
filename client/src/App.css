@@ -144,6 +144,27 @@ aside img{
   color: #614e90;
 }
 
+
+.Oferta{
+  padding: 2rem;
+  text-align: center;
+  align-items: center;
+ }
+
+.Oferta .Aside{
+border-radius: 2rem;  
+padding: .5rem;
+}
+
+.Oferta img{
+  margin: 1rem;
+}
+
+.Oferta button{
+  justify-content: center;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
